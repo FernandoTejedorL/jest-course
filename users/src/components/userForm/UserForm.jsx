@@ -1,11 +1,14 @@
 import { useState } from 'react';
 
-const UserForm = () => {
+const UserForm = ({ onUserAdd }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
   return (
-    <form action="" onSubmit={(event) => handleSubmit(event, name, email)}>
+    <form
+      action=""
+      onSubmit={(event) => handleSubmit(event, onUserAdd, name, email)}
+    >
       <div>
         <label htmlFor="">Name</label>
         <input type="text" onChange={(e) => setName(e.target.value)} />
@@ -19,9 +22,9 @@ const UserForm = () => {
   );
 };
 
-const handleSubmit = (event, name, email) => {
+const handleSubmit = (event, onUserAdd, name, email) => {
   event.preventDefault();
-  console.log(name, email);
+  onUserAdd({ name, email });
 };
 
 export default UserForm;
