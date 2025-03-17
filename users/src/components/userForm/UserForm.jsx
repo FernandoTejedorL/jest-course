@@ -17,7 +17,7 @@ const UserForm = ({ onUserAdd }) => {
         <label htmlFor="">Email</label>
         <input type="email" onChange={(e) => setEmail(e.target.value)} />
       </div>
-      <input type="submit" value="Add user" />
+      <button>Add User</button>
     </form>
   );
 };
