@@ -10,12 +10,20 @@ const UserForm = ({ onUserAdd }) => {
       onSubmit={(event) => handleSubmit(event, onUserAdd, name, email)}
     >
       <div>
-        <label htmlFor="">Name</label>
-        <input type="text" onChange={(e) => setName(e.target.value)} />
+        <label htmlFor="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          onChange={(e) => setName(e.target.value)}
+        />
       </div>
       <div>
-        <label htmlFor="">Email</label>
-        <input type="email" onChange={(e) => setEmail(e.target.value)} />
+        <label htmlFor="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
       <button>Add User</button>
     </form>
