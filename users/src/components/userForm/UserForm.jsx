@@ -7,12 +7,15 @@ const UserForm = ({ onUserAdd }) => {
   return (
     <form
       action=""
-      onSubmit={(event) => handleSubmit(event, onUserAdd, name, email)}
+      onSubmit={(event) =>
+        handleSubmit(event, onUserAdd, name, setName, email, setEmail)
+      }
     >
       <div>
         <label htmlFor="name">Name</label>
         <input
           id="name"
+          value={name}
           type="text"
           onChange={(e) => setName(e.target.value)}
         />
@@ -21,6 +24,7 @@ const UserForm = ({ onUserAdd }) => {
         <label htmlFor="email">Email</label>
         <input
           id="email"
+          value={email}
           type="email"
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -30,9 +34,11 @@ const UserForm = ({ onUserAdd }) => {
   );
 };
 
-const handleSubmit = (event, onUserAdd, name, email) => {
+const handleSubmit = (event, onUserAdd, name, setName, email, setEmail) => {
   event.preventDefault();
   onUserAdd({ name, email });
+  setName('');
+  setEmail('');
 };
 
 export default UserForm;

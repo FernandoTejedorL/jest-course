@@ -15,7 +15,7 @@ const UserList = ({ users }) => {
           <th>EMAIL</th>
         </tr>
       </thead>
-      <tbody>{renderedUsers}</tbody>
+      <tbody data-testid="users">{renderedUsers}</tbody>
     </table>
   );
 };
